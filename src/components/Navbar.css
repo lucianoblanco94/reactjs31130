@@ -24,13 +24,13 @@
 .navbar ul li a {
     text-decoration: none;
     color: rgb(129, 127, 127);
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 600;
-    opacity: .8;
-
-
+    opacity: .9;
 }
 
 .navbar ul li a:hover{
     color: white;
+
 }
+
