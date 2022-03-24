@@ -1,51 +1,77 @@
 import React from 'react';
+import {ItemCount} from '../count/ItemCount'
 
-const Cards = () => {
 
+const Cards = (props) => {
+    const containerSection = {
+        width:'100%',
+        display: 'flex',
+        flexFlow: 'row no-wrap'
+    }
     const cardContainer = {
-        height: 300,
+        height: 'auto',
         width: 180,
-        backgroundColor: '#e69d43',
-        borderRadius: 7,
-        padding:5,
+        borderRadius: 10,
+        padding: 4,
         margin: 20,
+        backgroundImage: 'linear-gradient(180deg, #e69d43, #2f2f2f)',
+        backgroundRepeat: 'repeat'
     }
 
     const card = {
-        backgroundColor: '#000',
+        backgroundImage: 'linear-gradient(180deg, #e69d43, #2f2f2f)',
+        backgroundRepeat: 'repeat',
         height: '100%',
+        borderRadius:7,
 
     }
     const imgCard = {
         width: 'auto',
-        backgroundColor: '#000',
         display: 'flex',
         flexDirection: 'column',
+        borderRadius:20
     }
 
-// Seguir con los estilos de la card luego
-    const prodCat = [
-        {title: "Phones", src: "../../multimedia/img/phones.jpg", alt:"phones" },
-        {title: "Cameras", src: "../../multimedia/img/cameras.jpg", alt:"cameras" },
-        {title: "Notebooks", src: "../../multimedia/img/notebooks.jpg", alt:"notebooks" },
-        {title: "Drones", src: "../../multimedia/img/drones.jpg", alt:"drones" },
-        {title: "Pc Gamer", src: "../../multimedia/img/pcgamer.jpg", alt:"pc gamer" },
-        {title: "Watches", src: "../../multimedia/img/watches.jpg", alt:"watches" },
-    ]
+    const imgThumb = {
+        width: '100%'
+    }
+
+    const sellButton = {
+        width:'100%',
+        height:25,
+        border: 'solid 1px #e69d43',
+        backgroundColor: '#e69d43',
+        fontSize: 16,
+        textAlign: 'center',
+        fontWeight:600,
+    }
 
     return (
-    <div style={cardContainer}>
-        <div style={card}>
-            <div style={imgCard}>
-                <img src="" alt="" />
-            </div>
-            <div className='card-info'>
-                <h3 className='card-title'></h3>
-                <p className='card-text'></p>
-            </div>
+        <div style = {containerSection}>
+        {props.productos.map((element, index) => {
+               return (
+                    <div style={cardContainer} key={index}>
+                        <div style={card}>
+                            <div style={imgCard}>
+                                <img src={element.src} style={imgThumb} alt={element.alt} />
+                            </div>
+                            <div className='card-info'>
+                                <h3 className='card-title'>{element.title}</h3>
+                                <p className='card-text'></p>
+                            </div>
+                            <div>
+                                <button style={sellButton}>Comprar</button>
+                            </div>
+                            <div>
+                                <ItemCount />
+                            </div>
+                        </div>
+                    </div>     
+        )})
+        }
         </div>
 
-    </div>
+
     )
 }
 

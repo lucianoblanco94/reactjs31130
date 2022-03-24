@@ -40,3 +40,35 @@ constructor(props){
      <h1>Hola mundo</h1>
    }
    }
+
+Hooks:
+    -useState: premite cambiar el estado de un componente 
+    y por ende provoca un re-render
+    useEffect: permite ejecutar una funcion cual el component
+    se renderiza
+
+Ciclo de vida con class:
+    -mount: cual el componente se monta 
+    -update: cuando el componente se actualiza
+    -unmout: cuando el componente se desmmonta
+
+    -mount:
+        -constructor: se ejecuta al crear el componente
+            -render: se ejecuta al renderizar el componente
+            -componentDidMount: se ejecuta al montar el componente
+    
+    -update: 
+        -render: se ejecuta al renderizar el componente
+        -shouldComponentUpdate: se ejecuta antes de actualizar el componente
+    
+    unmount:
+        -componentWillUnmount: se ejecuta antes de desmontar el componente
+
+a => obligatorio, una funcion
+b => un array
+useEffect(() => {})
+
+promesas:
+    pending: pendiente
+    result: resultado de la promesas
+    rejected: 
