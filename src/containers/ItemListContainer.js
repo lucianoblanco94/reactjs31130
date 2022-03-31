@@ -1,29 +1,37 @@
-import React from 'react';
-import { ItemCount } from '../components/count/ItemCount';
-import ItemList from '../components/ItemList'
+import React, {useState, useEffect} from 'react';
+import ItemList from '../components/ItemList';
+import {InitialProducts} from '../mock/InitialProducts';
+import { Loading } from '../components/loading/Loading';
 
-const productosIniciales = [
-    { title: "Phones", src: "../multimedia/img/phones.jpg", alt: "phones", stock: 10, initial: 0, price: 1000 },
-    { title: "Cameras", src: "../multimedia/img/cameras.jpg", alt: "cameras", stock: 10, initial: 0, price: 800 },
-    { title: "Notebooks", src: "../multimedia/img/notebooks.jpg", alt: "notebooks", stock: 10, initial: 0, price: 2000 },
-    { title: "Drones", src: "../multimedia/img/drones.jpg", alt: "drones", stock: 10, initial: 0, price: 4000 },
-    { title: "Pc Gamer", src: "../multimedia/img/pcgamer.jpg", alt: "pc gamer", stock: 10, initial: 0, price: 1500 },
-    { title: "Watches", src: "../multimedia/img/watches.jpg", alt: "watches", stock: 10, initial: 0, price: 400 }
-]
+
 const promesa = new Promise((res, rej) => {
     setTimeout(() => {
-        res(productosIniciales);            
-        },2000)
+        res(InitialProducts);            
+        },3000)
 });
 
 const ItemListContainer = ({greeting}) => {
+    const [products, setProducts] = useState([]);
+    const [loading, setLoading] = useState(true);
 
-    const onAdd = (count) => {
-        console.log(`Estas comprando ${count}`);
-    };
+    useEffect(() => {
+        promesa.then((products) =>{
+            setProducts(products);
+        }).catch((error) => {
+            console.error('Error: ', error);
+        }).finally(() => {
+            setLoading(false);
+        })
+    }, [])
 
     return  (
         <>
+         <div>
+                {/* {loading 
+                ? ( <Loading /> )
+                : (console.log("Fin"))
+                } */}
+            </div>
         <div style={container}>
             <div style={gradientBorder}>
                 <div style={gradientBox} >
@@ -31,13 +39,12 @@ const ItemListContainer = ({greeting}) => {
             </div>
             </div>
         </div>
-        <ItemList listProducts={promesa} />
+        <ItemList products={products} />
         </>
     )
 }
 
 export default ItemListContainer
-
 
 const container = {
     display:'flex',

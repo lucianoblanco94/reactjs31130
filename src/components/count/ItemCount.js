@@ -1,5 +1,4 @@
-import { height } from '@mui/system';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 export const ItemCount = ({stock, initial, onAdd}) => {
   

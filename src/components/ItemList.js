@@ -1,27 +1,15 @@
-import React, { useEffect, useState } from 'react';
 import Item from './Item';
 import { ItemCount } from './count/ItemCount';
-const ItemList = ({listProducts}) => {
+
+const ItemList = ({products}) => {
 
     const onAdd = (count) => {
         console.log(`Estas comprando ${count}`);
     };
 
-    const initial = [];
-    const [productos, setProductos] = useState(initial);
-    const [show, setShow] = useState(false);
-
-    useEffect(() => {
-        listProducts.then((prod) =>{
-            setProductos(prod);
-            setShow(!show);
-        }).catch(() => {
-            console.log('Error');
-        })
-    }, [])
-
-    const element = productos.map((element,index) => {
+    const element = products.map((element,index) => {
         return (
+            <>
             <div className="card" style={card} key={index}>
                 <img src={element.src} style={cardImg} alt={element.alt} />
                     <div className="card-body">
@@ -31,6 +19,7 @@ const ItemList = ({listProducts}) => {
                         <ItemCount stock={10} initial={0} onAdd={onAdd} />
                     </div>
             </div>
+            </>
         )
     })
 
