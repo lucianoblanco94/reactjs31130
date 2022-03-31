@@ -66,9 +66,7 @@ Ciclo de vida con class:
 
 a => obligatorio, una funcion
 b => un array
-useEffect(() => {})
+useEffect(() => {}, [])
 
 promesas:
-    pending: pendiente
-    result: resultado de la promesas
-    rejected: 
+    pending= fulfilled,rejected

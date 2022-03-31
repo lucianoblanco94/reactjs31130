@@ -1,12 +1,11 @@
 import React from 'react';
-import {ItemCount} from '../count/ItemCount'
 
 
 const Cards = (props) => {
     const containerSection = {
         width:'100%',
         display: 'flex',
-        flexFlow: 'row no-wrap'
+        flexFlow: 'row wrap'
     }
     const cardContainer = {
         height: 'auto',
@@ -62,9 +61,7 @@ const Cards = (props) => {
                             <div>
                                 <button style={sellButton}>Comprar</button>
                             </div>
-                            <div>
-                                <ItemCount />
-                            </div>
+                          
                         </div>
                     </div>     
         )})

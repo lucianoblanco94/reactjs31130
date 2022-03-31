@@ -1,7 +1,7 @@
 .navbar {
     background-color: #e69d43;
     display: flex;
-    justify-content: center;
+    justify-content: center !important;
 }
 
 .navbar ul {

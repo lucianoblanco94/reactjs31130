@@ -1,30 +1,42 @@
+import { height } from '@mui/system';
 import React, { useState, useEffect } from 'react';
 
 export const ItemCount = ({stock, initial, onAdd}) => {
   
     
-
-    const[count, setCount] = useState(0);
+    const[count, setCount] = useState(initial);
+    // const[setup, setSetup] = useState(0);
+    
+    // useEffect(() => {
+    //     console.log("Se ejecuto el useEffect");
+    //     setTimeout(() => {
+    //         setSetup(setup + 2);
+    //         },2000)
+    // }, [count]);
 
     const restClick = () => {
-       if(count > 0) setCount(count - 1)
+        (count > 0) 
+        ? setCount(count - 1)
+        : (console.log("No se puede seleccionar menos que 0"));
     };
 
     const addClick = () => {
-        if(count < stock) setCount(count + 1)
+        (count < stock) 
+        ? setCount(count + 1)
+        : (alert("Lo sentimos, no tenemos más que este stock"))
     };
 
     const addCart = () => {
-       (count != 0) 
+       (count !== 0) 
        ? (onAdd(count))
        : (console.log('Agrega la cantidad a comprar'));
-    }
+    };
     
     const container = {
         width:'100%',
         display: 'flex',
         justifyContent: 'center',
-        margin: '50px 0'
+        margin: '10px 0',
 
     }
 
@@ -85,7 +97,6 @@ export const ItemCount = ({stock, initial, onAdd}) => {
         <div style={container}>
             <div style={contador}>
                 <div style={cardCount}>
-                    {/* <h1>{setup}</h1> */}
                     <div style={box}>
                         <button onClick={restClick} style={button}>-</button>
                         <p>{count}</p>
@@ -107,3 +118,7 @@ export const ItemCount = ({stock, initial, onAdd}) => {
     //         setSetup(setup +1);
     //     }, 1000)
     // }, [count])
+
+    // setTimeout(() => {
+    //     codigo a aplicar
+    // }, #tiempo)
