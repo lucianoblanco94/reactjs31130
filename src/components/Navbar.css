@@ -2,6 +2,7 @@
     background-color: #e69d43;
     display: flex;
     justify-content: center !important;
+
 }
 
 .navbar ul {
@@ -11,6 +12,7 @@
     padding: 2px;
     margin: 5px;
     flex-flow: row nowrap;
+    width: 100%;
 }
 
 .navbar ul li {

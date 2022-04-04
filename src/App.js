@@ -1,3 +1,4 @@
+import { Margin } from "@mui/icons-material";
 import React from "react";
 import Navbar from "./components/Navbar";
 import ItemListContainer from "./containers/ItemListContainer";
@@ -24,5 +25,6 @@ const bodyStyle = {
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
-  alignItems: 'center'
+  alignItems: 'center',
+  
 }
