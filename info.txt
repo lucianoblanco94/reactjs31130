@@ -70,3 +70,51 @@ useEffect(() => {}, [])
 
 promesas:
     pending= fulfilled,rejected
+
+
+CLASE 7 API
+ XHR - Fetch()
+
+ Http
+
+ Cliente - Servidor
+ Request - Response
+ A - B
+
+Request - Cliente
+ URL: Dirección física
+ Métodos/verbos: 
+ GET => OBTENER ALGO DEL SERVIDOR MEDIANTE UN REQUEST
+ POST => SUBIR INFORMACIÓN AL SERVIDOR PARA ALMACENARLA
+ PUT => REEMPLAZAR O EDITAR UN ELEMENTO EN EL SERVIDOR PISANDO TODA LA INFORMACIÓN
+ PATCH => CAMBIOS PARTICULARES
+ DELETE => BORRAR UN ELEMENTO
+ Version: HTTP/1.1
+ Headers
+ Body
+
+Response - Servidor
+Version: HTTP/1.1
+Codigo de estado: 200 201 302 304 400 401 403 404 500 502 504 etc 
+HeadersBody
+
+fetch(url)}
+
+AJAX: Async Javascript And Xml
+
+ 
+Uso de fetch
+fetch(url, {
+    method: 'GET',
+    headers: {
+        'Content-Type': 'application/json',
+    }
+    body: JSON.stringfy({
+        nombre: 'pepe',
+        edad:'23'
+    })
+})
+
+fetch(https://jsonplaceholder.typicode.com/users)
+.then(data => data.json())
+.then(users => console.log(users));
