@@ -5,7 +5,8 @@ export const InitialProducts = [
      alt: "phones", 
      stock: 10, 
      initial: 0, 
-     price: 213000 
+     price: 213000,
+     icon: "bi bi-phone",
     },
     { 
         title: "Cameras", 
@@ -13,14 +14,16 @@ export const InitialProducts = [
     alt: "cameras", 
     stock: 10, 
     initial: 0, 
-    price: 50000
+    price: 50000,
+    icon: "bi bi-camera",
 },
     { 
         title: "Notebooks", 
     src: "https://www.lenovo.com/medias/lenovo-laptops-think-thinkpad-l-series-l14a-gallery.png?context=bWFzdGVyfHJvb3R8NTIwNTExfGltYWdlL3BuZ3xoNDEvaDZmLzE0MTkwNDY5ODA4MTU4LnBuZ3xkNTZlMmM5Zjg0ZmQ3YmFhOGNhMzZiNjEwNjIzODYyYTZhZmFhZTUyOTU4N2IwOTcyYjQ5OWQ0NDM1ZDE0OTE2", 
     alt: "notebooks", stock: 10, 
     initial: 0, 
-    price: 160000 
+    price: 160000,
+    icon: "bi bi-laptop",
 },
     { 
         title: "Drones", 
@@ -28,7 +31,8 @@ export const InitialProducts = [
     alt: "drones", 
     stock: 10, 
     initial: 0, 
-    price: 200000 
+    price: 200000,
+    icon: "bi bi-joystick",
 },
     { 
         title: "Pc Gamer", 
@@ -36,7 +40,8 @@ export const InitialProducts = [
     alt: "pc gamer", 
     stock: 10, 
     initial: 0, 
-    price: 400000 
+    price: 400000,
+    icon: " bi bi-pc-display"
 },
     { 
         title: "Watches", 
@@ -44,7 +49,8 @@ export const InitialProducts = [
     alt: "watches", 
     stock: 10, 
     initial: 0, 
-    price: 90000 
+    price: 90000,
+    icon: "bi bi-watch",
 },
 {
     title: "Tablets", 
@@ -52,7 +58,8 @@ export const InitialProducts = [
     alt: "tablets", 
     stock: 10, 
     initial: 0, 
-    price: 109000
+    price: 109000,
+    icon: "bi bi-tablet-landscape",
 },
 {
     title: "Consolas", 
@@ -60,7 +67,7 @@ export const InitialProducts = [
     alt: "consola", 
     stock: 10, 
     initial: 0, 
-    price: 130000
+    price: 130000,
+    icon: "bi bi-controller",
 }
-
 ]

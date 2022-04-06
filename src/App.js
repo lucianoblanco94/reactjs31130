@@ -1,5 +1,5 @@
-import { Margin } from "@mui/icons-material";
 import React from "react";
+import CategoryContainer from "./containers/categorys/CategoryContainer";
 import Navbar from "./components/Navbar";
 import ItemDetailContainer from "./containers/ItemDetailContainer/ItemDetailContainer";
 import ItemListContainer from "./containers/ItemListContainer/ItemListContainer";
@@ -15,6 +15,7 @@ const App = () => {
         <Navbar categorias={categorias} />
         <ItemListContainer greeting="TaleTech" />
         <ItemDetailContainer/>
+        {/* <CategoryContainer /> */}
       </div>
 
     </>
