@@ -1,8 +1,8 @@
 import React from "react";
-import CategoryContainer from "./containers/categorys/CategoryContainer";
 import Navbar from "./components/Navbar";
 import ItemDetailContainer from "./containers/ItemDetailContainer/ItemDetailContainer";
 import ItemListContainer from "./containers/ItemListContainer/ItemListContainer";
+import CategoryContainer from "./containers/Category/CategoryContainer";
 
 const App = () => {
 
@@ -15,7 +15,7 @@ const App = () => {
         <Navbar categorias={categorias} />
         <ItemListContainer greeting="TaleTech" />
         <ItemDetailContainer/>
-        {/* <CategoryContainer /> */}
+        <CategoryContainer />
       </div>
 
     </>

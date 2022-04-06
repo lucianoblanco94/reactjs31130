@@ -11,9 +11,8 @@ const ItemDetailContainer = () => {
         const getitem = () =>{
             fetch(url)
                 .then(data => data.json())
-                .then((data) => {
-                    console.log(data)
-                    setProduct(data)
+                .then((prod) => {
+                    setProduct(prod)
                 }).catch(() => {
                     console.log("Se detectó un error.")
                 })

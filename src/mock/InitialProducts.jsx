@@ -6,7 +6,7 @@ export const InitialProducts = [
      stock: 10, 
      initial: 0, 
      price: 213000,
-     icon: "bi bi-phone",
+     icon: "fa fa-phone",
     },
     { 
         title: "Cameras", 
@@ -15,7 +15,7 @@ export const InitialProducts = [
     stock: 10, 
     initial: 0, 
     price: 50000,
-    icon: "bi bi-camera",
+    icon: "camera",
 },
     { 
         title: "Notebooks", 
@@ -23,7 +23,7 @@ export const InitialProducts = [
     alt: "notebooks", stock: 10, 
     initial: 0, 
     price: 160000,
-    icon: "bi bi-laptop",
+    icon: "laptop",
 },
     { 
         title: "Drones", 
@@ -32,7 +32,7 @@ export const InitialProducts = [
     stock: 10, 
     initial: 0, 
     price: 200000,
-    icon: "bi bi-joystick",
+    icon: "airplane",
 },
     { 
         title: "Pc Gamer", 
@@ -41,7 +41,7 @@ export const InitialProducts = [
     stock: 10, 
     initial: 0, 
     price: 400000,
-    icon: " bi bi-pc-display"
+    icon: " pc"
 },
     { 
         title: "Watches", 
@@ -50,7 +50,7 @@ export const InitialProducts = [
     stock: 10, 
     initial: 0, 
     price: 90000,
-    icon: "bi bi-watch",
+    icon: "watch",
 },
 {
     title: "Tablets", 
@@ -59,7 +59,7 @@ export const InitialProducts = [
     stock: 10, 
     initial: 0, 
     price: 109000,
-    icon: "bi bi-tablet-landscape",
+    icon: "tablet",
 },
 {
     title: "Consolas", 
@@ -68,6 +68,6 @@ export const InitialProducts = [
     stock: 10, 
     initial: 0, 
     price: 130000,
-    icon: "bi bi-controller",
+    icon: "controller",
 }
 ]

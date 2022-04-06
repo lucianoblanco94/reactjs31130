@@ -2,6 +2,8 @@ import React, {useState, useEffect} from 'react'
 import { InitialProducts } from '../../mock/InitialProducts'
 import Category from './Category'
 import './Categories.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 
 const CategoryContainer = () => {
@@ -21,14 +23,14 @@ const CategoryContainer = () => {
         })
     }, [])
 
-    const item = categorias.map((category) => {
+    const item = categorias.map((category, index) => {
         return (
-        
-            <div className='box-shadow d-flex mx-auto'>
-                <div>
+            <div className='category-list' key={index}>
+                <div className='category-content'>
                     <div className='item-content'>
                         <a href="#">
-                            <img src={category.icon} alt={category.title} />
+                            <i className='icon'></i>
+                            {/* <img src="" className={category.icon} alt={category.title} /> */}
                             <span>{category.title}</span>
                         </a>
                     </div>
@@ -38,7 +40,7 @@ const CategoryContainer = () => {
     })
 
     return (
-        <Category product={item} />
+        <Category products={item} />
     )
 }
 

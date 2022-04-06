@@ -8,7 +8,7 @@ const ItemListContainer = ({greeting}) => {
     const promesa = new Promise((res, rej) => {
         setTimeout(() => {
             res(InitialProducts);            
-            }, 1500)
+            }, 1000)
     });
     
     const [products, setProducts] = useState([]);
