@@ -3,31 +3,39 @@ import Navbar from "./components/Navbar";
 import ItemDetailContainer from "./containers/ItemDetailContainer/ItemDetailContainer";
 import ItemListContainer from "./containers/ItemListContainer/ItemListContainer";
 import CategoryContainer from "./containers/Category/CategoryContainer";
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Cart } from './components/Cart/Cart.jsx';
+import {Error} from './components/Error/Error'
+import { PruebaAsync } from "./components/PruebaAsync";
 
 const App = () => {
 
-  const categorias = [{category: "Phones"}, {category: "Cameras"}, {category: "Notebooks"}, {category: "Drones"}, {category: "Pc Gamer"}, {category: "Tablets"}, {category: "Consolas"}];
-  
-  return ( 
-    <>
+  const categorias = [
+    { category: "Phones", route: "/category/phones" },
+    { category: "Cameras", route: "/category/cameras" },
+    { category: "Notebooks", route: "/category/notebooks" },
+    { category: "Drones", route: "/category/dron" },
+    { category: "Pc Gamer", route: "/category/pcgamer" },
+    { category: "Tablets", route: "/category/tablets" },
+    { category: "Consolas", route: "/category/consoles" }];
 
-      <div style= {bodyStyle}>
-        <Navbar categorias={categorias} />
-        <ItemListContainer greeting="TaleTech" />
-        <ItemDetailContainer/>
+  return (
+
+    <BrowserRouter>     
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<ItemListContainer greeting="Shop Online" />} />
+          <Route path="/category/:category" element={<ItemListContainer greeting="TaleTech" />} />
+          <Route path="/item/:id" element={<ItemDetailContainer />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="*" element={<Error />}/>
+        </Routes>
+        <ItemDetailContainer />
         <CategoryContainer />
-      </div>
+    </BrowserRouter>
 
-    </>
+
   );
 };
 
 export default App
-
-const bodyStyle = {
-  display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'center',
-  alignItems: 'center',
-  
-}

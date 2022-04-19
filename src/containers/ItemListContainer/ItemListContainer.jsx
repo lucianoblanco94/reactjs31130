@@ -1,109 +1,111 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import ItemList from './ItemList';
-import {InitialProducts} from '../../mock/InitialProducts';
+import { useParams } from 'react-router-dom';
+import './itemlist.css'
 // import { Loading } from '../../components/loading/Loading';
 
-const ItemListContainer = ({greeting}) => {
+const ItemListContainer = ({ greeting }) => {
 
-    const promesa = new Promise((res, rej) => {
-        setTimeout(() => {
-            res(InitialProducts);            
-            }, 1000)
-    });
-    
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(false);
+    const { category } = useParams();
 
+    // async await igual que item detail
     useEffect(() => {
+        const url = "https://fakestoreapi.com/products"
+        ? `https://fakestoreapi.com/products/category/${category}`
+        : "https://fakestoreapi.com/products";
 
-        promesa.then((products) =>{
-            setProducts(products);
-        }).catch((error) => {
-            console.error('Error: ', error);
-        }).finally(() => {
-            setLoading(false);
-        })
-    }, [])
+        const getItems = async () =>{
+            try {
+                const res = await fetch(url);
+                const data = await res.json();
+                setProducts(data);
+            } catch {
+                setError(error)
+            } finally {
+                setLoading(false);
+            }
+        }
+        getItems();
+    }, [category])
 
-    return  (
+    return (
         <>
-        
-        <div style={container}>
-            <div style={gradientBorder}>
-                <div style={gradientBox} >
-                <h2 style={welcome}>{greeting}</h2>
+
+            <div className='container-title'>
+                <div className='grad-border'>
+                    <div className='grad-box' >
+                        <h2 className='welcome'>{greeting}</h2>
+                    </div>
+                </div>
             </div>
-            </div>
-        </div>
-        {(loading
-        ? (
-        <div>
-            {/* <Loading /> */}
-            Hola
-        </div>
-        )
-        :(<ItemList products={products} />))}
+            {(loading
+                ? (
+                    <div>
+                        {/* <Loading /> */}
+                        Hola
+                    </div>
+                ) : error ?
+                    <h2>Error</h2>
+                : (<div className='container'>
+                    <ItemList products={products} />
+                </div>
+                ))}
         </>
     )
 }
 
 export default ItemListContainer
 
-const container = {
-    display:'flex',
-    justifyContent:'center',
-    width: '70%'
+/* Fijarse xq no funciona
+useEffect (() => {
+    const intervalo = setInterval(() => {
+        console.log("ping");
+    }, 1000);
+    return () => {
+        clearInterval(intervalo);
+    }
+}, [])
+
+const [productos, setProductos] = useState([])    
+    useEffect (() => {        
+        promesa.then((productos) => {
+            setProductos(productos);
+        }).catch(() => {
+            console.log("Error")
+        })
+    }, [])
+
+    Es lo mismo que lo de arriba
+    const promesa2 = fetch()
+    fetch()
+    .then((data) => {console.log(data)})
+    .catch(() => {console.log("Error")})
+
+
+
+Con api
+
+const url = "";
+if(category){
+    url = (comillainvertida) urlconcategory${category};
+}else {
+    url= "url producto generales"
 }
-const gradientBorder = {
-    backgroundImage: 'linear-gradient(45deg, #e69d43, #000)',
-    backgroundRepeat: 'repeat',
-    padding: 10,
-    margin: 20,
-    borderRadius:7,
-    width: '100%',
-    textAlign:'center',
-}
+fetch(url)
 
-const gradientBox = {
-    backgroundColor: '#f6f6f6',
-    padding: 2,
-    display: 'flex',
-    justifyContent: 'center',
-    borderRadius:7,         
+async/await
+  const getitems = async () => {
+        const response = await fetch('https://fakestoreapi.com/products');
+        const data = await response.json();
+        setProducts(data);
+        setLoading(false);
+    }
 
-}
+    useEffect(() => {
 
-const welcome = {
-    fontSize: 48,
-    backgroundImage: 'linear-gradient(45deg, #111111, #e69d43)',
-    webkitBackgroundClip: 'text',
-    webkitTextFillColor: 'transparent',  
-}
-
-// Fijarse xq no funciona
-// useEffect (() => {
-//     const intervalo = setInterval(() => {
-//         console.log("ping");
-//     }, 1000);
-//     return () => {
-//         clearInterval(intervalo);
-//     }
-// }, [])
-
-// const [productos, setProductos] = useState([])    
-    // useEffect (() => {        
-    //     promesa.then((productos) => {
-    //         setProductos(productos);
-    //     }).catch(() => {
-    //         console.log("Error")
-    //     })
-    // }, [])
-
-    // Es lo mismo que lo de arriba
-    // const promesa2 = fetch()
-    // fetch()
-    // .then((data) => {console.log(data)})
-    // .catch(() => {console.log("Error")})
-
-
-    
+        getitems();
+      
+    }, []); */

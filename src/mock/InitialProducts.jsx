@@ -3,10 +3,17 @@ export const InitialProducts = [
      title: "Phones", 
      src: "https://www.apple.com/v/iphone-13-pro/f/images/overview/design/design_display_pro_max__dswn1tntiywm_large_2x.png", 
      alt: "phones", 
-     stock: 10, 
-     initial: 0, 
+     stock: 15, 
+     initial: 0,
+     id: 1, 
      price: 213000,
-     icon: "fa fa-phone",
+     name: "iPhone 13 Pro",
+     category: "Phones",
+     desc:`Capacidad: 256 GB
+            Tamaño: 6.7"
+            Video 4k 60fps
+            Camara Pro 12MP Wide and Ultra Wide` ,
+     logo: "https://static.vecteezy.com/system/resources/previews/002/520/838/large_2x/apple-logo-black-isolated-on-transparent-background-free-vector.jpg",
     },
     { 
         title: "Cameras", 
@@ -16,6 +23,7 @@ export const InitialProducts = [
     initial: 0, 
     price: 50000,
     icon: "camera",
+    category: "cameras",
 },
     { 
         title: "Notebooks", 
@@ -24,6 +32,7 @@ export const InitialProducts = [
     initial: 0, 
     price: 160000,
     icon: "laptop",
+    category: "notebooks",
 },
     { 
         title: "Drones", 
@@ -33,6 +42,7 @@ export const InitialProducts = [
     initial: 0, 
     price: 200000,
     icon: "airplane",
+    category: "dron",
 },
     { 
         title: "Pc Gamer", 
@@ -41,7 +51,8 @@ export const InitialProducts = [
     stock: 10, 
     initial: 0, 
     price: 400000,
-    icon: " pc"
+    icon: " pc", 
+    category: "pcgamer",
 },
     { 
         title: "Watches", 
@@ -51,23 +62,33 @@ export const InitialProducts = [
     initial: 0, 
     price: 90000,
     icon: "watch",
+    category: "watches",
 },
 {
     title: "Tablets", 
-    src: "https://www.lenovo.com/medias/?context=bWFzdGVyfHJvb3R8NTcwNjR8aW1hZ2UvcG5nfGhjMC9oNjAvMTE2Nzk5NzY4NDk0MzgucG5nfDNmZTFjOGUzN2FkNzAzNTFmOTZiOTE2NDFjYWEzZTRhODlhYzA4NzU3ZDQ0YWI4YTcxYTdkYTMxNzE0YWEzNGE", 
+    src: "https://www.apple.com/v/ipad-pro/ai/images/overview/experience/intro_display_static__d19ubvnynzma_large.jpg", 
     alt: "tablets", 
     stock: 10, 
     initial: 0, 
     price: 109000,
     icon: "tablet",
+    category: "tablet",
 },
 {
     title: "Consolas", 
-    src: "https://img2.freepng.es/20180704/ack/kisspng-sony-playstation-4-slim-sony-interactive-entertain-neoopsis-science-fiction-magazine-5b3c59d2507b09.2043963615306818103297.jpg", 
-    alt: "consola", 
+    src: "https://gmedia.playstation.com/is/image/SIEPDC/playstation-5-horizontal-product-shot-01-ps5-en-23nov20?$3200px--t$", 
+    alt: "consola",
+    name: "PlayStation 5" ,
     stock: 10, 
     initial: 0, 
-    price: 130000,
+    price: 180000,
     icon: "controller",
+    id: 12,
+    category: "Consolas",
+    desc: `Ultra 4k
+    Virtual Reality
+    Compatibility w/PS4`,
+    logo: "https://gmedia.playstation.com/is/image/SIEPDC/ps5-black-badge-01-en-11sep20?$400px--t$",
+
 }
 ]

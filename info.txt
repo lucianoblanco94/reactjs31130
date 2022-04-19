@@ -117,8 +117,15 @@ fetch(url, {
 
 CLASE ROUTING Y NAVEGACION
 react-router-dom 
-
+ 
 
 fetch(https://jsonplaceholder.typicode.com/users)
 .then(data => data.json())
 .then(users => console.log(users));
+
+CLASE EVENT
+Event(e) => el objeto evento que se envia a los componentes 
+cuando se produce un evento 
+Event.target => el elemento HTML que recibió el evento 
+
+console.dir(e.target) 

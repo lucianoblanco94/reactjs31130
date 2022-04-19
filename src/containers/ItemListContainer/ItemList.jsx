@@ -1,5 +1,6 @@
 import Item from './Item';
 import { ItemCount } from '../../components/count/ItemCount';
+import './itemlist.css'
 
 const ItemList = ({products}) => {
 
@@ -10,14 +11,40 @@ const ItemList = ({products}) => {
     const element = products.map((element,index) => {
         return (
             <>
-            <div className="card" style={card} key={index}>
-                <img src={element.src} style={cardImg} alt={element.alt} />
-                    <div className="card-body">
+            <div className="card" key={index}>
+                <div className='card-col'>
+                {/* <img src={element.logo} alt="logo"  /> */}
+                <h3>{element.title}</h3>
+
+                <div className='card-info'>                    
+                    <p className='card-text'><span className="card-price">${element.price}</span>
+                    </p>
+                    <p className='card-text'>ID:<span>{element.id} </span></p>
+                    <p className='card-text'>Stock:<span>{element.rating.count} </span></p>
+                    <p className='card-text'>Category:<span>{element.category} </span></p>
+                </div>
+
+                </div >
+                <div className='card-thumb'>
+                    <img  src={element.image} alt={element.title} className='card-img' />
+                </div>
+                <div className='card-col'>
+                    <p>{element.description}</p>
+                    <ItemCount stock={element.rating.count} initial={0} onAdd={onAdd} />
+                </div>
+
+
+
+
+                {/* <div className='img-item'> */}
+                {/* <img src={element.src} alt={element.alt} className='card-img' /> */}
+                {/* </div> */}
+                    {/* <div className="card-body">
                         <h5 className="card-title">{element.title}</h5>
                         <p className="card-text">${element.price}.</p>
                         <a href="#" className="btn btn-primary">See more</a>
                         <ItemCount stock={10} initial={0} onAdd={onAdd} />
-                    </div>
+                    </div> */}
             </div>
             </>
         )
@@ -35,16 +62,3 @@ const ItemList = ({products}) => {
 
 export default ItemList
 
-const card = {
-    width: '18rem',
-    padding:10,
-    backgroundImage: 'linear-gradient(180deg, #e69d43, #2f2f2f)',
-    backgroundRepeat: 'repeat',
-    border: 'none',
-    margin: 10,
-}
-
-const cardImg = {
-    borderRadius:5,
-    width:'100%',
-}
