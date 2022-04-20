@@ -1,30 +1,48 @@
 import React from 'react';
+import {ItemCount} from '../../components/count/ItemCount'
+import { Link } from 'react-router-dom'
+import './itemdetail.css'
 
 export const ItemDetail = ({ product }) => {
-   
+    const onAdd = (count) => {
+        console.log(`Estas comprando ${count}`);
+    }; 
     return (
-        <div style={itemStyle} key={product.id}>
-            <h4 style={itemTitle}>{product.title}</h4>
-            <img style={imagen} src={product.image} alt={product.title} />
-            <div style={label}>
-                <span style={details}>$ {product.price}</span>
+        <div className='container-detail'>
+            <h4 className='title-product'>{product.title}</h4>
+        <div className='item-detail' key={product.id}>
+            <img src={product.image} alt={product.title} />
+            <div className='info-detail'>
+
+            <div className='label-detail'>
+                <span className='info-product'>$ {product.price}</span>
             </div>
-            <div style={label}>
-                <p style={details}>Stock:</p>
-                <span style={details}>{product.count}</span>
+            <div className='label-detail'>
+                <p className='detail-product'>Stock:</p>
+                <span className='info-product'>{product.rating.count}</span>
             </div>
-            <div style={label}>
-                <p style={details}>ID:</p>
-                <p style={details}>{product.id}</p>
+            <div className='label-detail'>
+                <p className='detail-product'>ID:</p>
+                <p className='info-product'>{product.id}</p>
             </div>
-            <div style={label}>
-                <p style={details}>Descripcion:</p>
-                <span style={details}>{product.description}</span>
+            <div className='label-detail'>
+                <p className='detail-product'>Description:</p>
+                <span className='info-product'>{product.description}</span>
             </div>
-            <div style={label}>
-                <p style={details}>Category:</p>
-                <span style={details}>{product.category}</span>
+            <div className='label-detail'>
+                <p className='detail-product'>Category:</p>
+                <span className='info-product'>{product.category}</span>
             </div>
+            </div>
+
+        </div>
+        <div className='sell-container'>
+            <ItemCount stock={product.rating.count} initial={0} onAdd={onAdd} />
+            <Link to="/cart">
+            <button className='btn-sell'>Finalizar compra</button></Link>
+
+        </div>
+
         </div>
     )
 }

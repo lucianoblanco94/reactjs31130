@@ -4,15 +4,6 @@ export const ItemCount = ({stock, initial, onAdd}) => {
   
     
     const[count, setCount] = useState(initial);
-    // const[setup, setSetup] = useState(0);
-    
-    // useEffect(() => {
-    //     console.log("Se ejecuto el useEffect");
-    //     setTimeout(() => {
-    //         setSetup(setup + 2);
-    //         },2000)
-    // }, [count]);
-
     const restClick = () => {
         (count > 0) 
         ? setCount(count - 1)
@@ -49,7 +40,7 @@ export const ItemCount = ({stock, initial, onAdd}) => {
         flexDirection: 'column',
         borderRadius:10,
         border: 'solid 3px #111111',
-        boxShadow:'5px 5px'
+        boxShadow:'1px 2px'
     }
 
     const cardCount = {

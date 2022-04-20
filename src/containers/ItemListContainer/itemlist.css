@@ -89,3 +89,19 @@
     width: 200px;
     
 }
+
+.btn-more {
+    margin: 10px auto 5px;
+    display: flex;
+    background-color: #000;
+    color: white;
+    font-size: 18px;
+    padding: 7px;
+    border-radius: 7px;
+    border: #000 ;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    
+}

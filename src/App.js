@@ -6,7 +6,6 @@ import CategoryContainer from "./containers/Category/CategoryContainer";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Cart } from './components/Cart/Cart.jsx';
 import {Error} from './components/Error/Error'
-import { PruebaAsync } from "./components/PruebaAsync";
 
 const App = () => {
 
@@ -25,13 +24,12 @@ const App = () => {
         <Navbar />
         <Routes>
           <Route path="/" element={<ItemListContainer greeting="Shop Online" />} />
-          <Route path="/category/:category" element={<ItemListContainer greeting="TaleTech" />} />
-          <Route path="/item/:id" element={<ItemDetailContainer />} />
+          <Route path="/category/:category" element={<ItemListContainer greeting="Shop Online" />} />
+          <Route path="/product/:id" element={<ItemDetailContainer />} />
           <Route path="/cart" element={<Cart />} />
-          <Route path="*" element={<Error />}/>
+          {/* <Route path="/" element={<Error />}/> */}
         </Routes>
-        <ItemDetailContainer />
-        <CategoryContainer />
+        {/* <CategoryContainer /> */}
     </BrowserRouter>
 
 

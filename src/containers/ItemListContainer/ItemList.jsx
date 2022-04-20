@@ -1,6 +1,7 @@
 import Item from './Item';
 import { ItemCount } from '../../components/count/ItemCount';
 import './itemlist.css'
+import { Link} from 'react-router-dom'
 
 const ItemList = ({products}) => {
 
@@ -8,10 +9,12 @@ const ItemList = ({products}) => {
         console.log(`Estas comprando ${count}`);
     };
 
-    const element = products.map((element,index) => {
+    
+    const element = products.map((element) => {
+        const URL= `/product/${element.id}`;
         return (
             <>
-            <div className="card" key={index}>
+            <div className="card" key={element.id}>
                 <div className='card-col'>
                 {/* <img src={element.logo} alt="logo"  /> */}
                 <h3>{element.title}</h3>
@@ -27,24 +30,15 @@ const ItemList = ({products}) => {
                 </div >
                 <div className='card-thumb'>
                     <img  src={element.image} alt={element.title} className='card-img' />
+                    <Link to={URL}>
+
+                    <button className='btn-more'>See More</button>
+                    </Link>
                 </div>
                 <div className='card-col'>
                     <p>{element.description}</p>
                     <ItemCount stock={element.rating.count} initial={0} onAdd={onAdd} />
                 </div>
-
-
-
-
-                {/* <div className='img-item'> */}
-                {/* <img src={element.src} alt={element.alt} className='card-img' /> */}
-                {/* </div> */}
-                    {/* <div className="card-body">
-                        <h5 className="card-title">{element.title}</h5>
-                        <p className="card-text">${element.price}.</p>
-                        <a href="#" className="btn btn-primary">See more</a>
-                        <ItemCount stock={10} initial={0} onAdd={onAdd} />
-                    </div> */}
             </div>
             </>
         )
@@ -52,8 +46,7 @@ const ItemList = ({products}) => {
 
     return (
         <>
-            <Item producto={element} />
-
+            <Item key={element.id} producto={element} />
         </>
     )  
 }
